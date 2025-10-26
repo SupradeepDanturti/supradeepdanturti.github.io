@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#EE4C2C" opacity="0.1"/>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#EE4C2C" stroke-width="3"/>
+
+  <!-- PyTorch flame icon -->
+  <g transform="translate(100, 100)">
+    <!-- Flame base -->
+    <ellipse cx="0" cy="25" rx="20" ry="8" fill="#EE4C2C" opacity="0.3"/>
+
+    <!-- Main flame -->
+    <path d="M 0,-40
+             C -15,-30 -20,-10 -15,5
+             C -12,15 -5,25 0,30
+             C 5,25 12,15 15,5
+             C 20,-10 15,-30 0,-40 Z"
+          fill="#EE4C2C"/>
+
+    <!-- Inner flame highlight -->
+    <path d="M 0,-35
+             C -8,-28 -10,-15 -7,0
+             C -5,8 -2,15 0,18
+             C 2,15 5,8 7,0
+             C 10,-15 8,-28 0,-35 Z"
+          fill="#F7931E"/>
+
+    <!-- Torch handle -->
+    <rect x="-4" y="25" width="8" height="18" rx="2" fill="#333"/>
+
+    <!-- Top circle (PyTorch icon feature) -->
+    <circle cx="0" cy="-50" r="8" fill="none" stroke="#EE4C2C" stroke-width="3"/>
+    <circle cx="0" cy="-50" r="4" fill="#EE4C2C"/>
+  </g>
+
+  <!-- Neural network nodes -->
+  <g opacity="0.4">
+    <circle cx="50" cy="100" r="5" fill="#EE4C2C"/>
+    <circle cx="150" cy="100" r="5" fill="#EE4C2C"/>
+    <circle cx="100" cy="60" r="5" fill="#EE4C2C"/>
+    <circle cx="100" cy="140" r="5" fill="#EE4C2C"/>
+
+    <!-- Connections -->
+    <line x1="50" y1="100" x2="100" y2="60" stroke="#EE4C2C" stroke-width="1.5"/>
+    <line x1="50" y1="100" x2="100" y2="140" stroke="#EE4C2C" stroke-width="1.5"/>
+    <line x1="150" y1="100" x2="100" y2="60" stroke="#EE4C2C" stroke-width="1.5"/>
+    <line x1="150" y1="100" x2="100" y2="140" stroke="#EE4C2C" stroke-width="1.5"/>
+  </g>
+</svg>

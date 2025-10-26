@@ -112,6 +112,9 @@ hr {
     padding-left: 20px;
     padding-bottom: 20px;
 }
+.htxt {
+    text-align: justify;
+}
 .entry {
 }
 .entry-dot {
@@ -131,6 +134,153 @@ hr {
     padding-right: 5px;
     color: #bbb;
 }
+
+/* Projects Section */
+.projects-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 40px;
+    text-align: left;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #555, #999);
+    margin: 15px 0 0;
+    border-radius: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.project-image {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 16px;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.project-content h3 a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-content h3 a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.project-content h3 a:hover {
+    color: #555;
+}
+
+.project-content p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-content p:last-child {
+    margin-bottom: 0;
+}
+
+.project-content p a {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-image {
+        height: 120px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+}
+
 .hassets {
     position: relative;
 }
@@ -144,105 +294,161 @@ hr {
     margin: 0;
     padding: 0;
 }
-.ctitle {
-    font-size: 36px;
+/* Publications Section */
+.publications-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.publication-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-left: 4px solid #555;
+    border-radius: 8px;
+    padding: 25px;
     margin-bottom: 20px;
-    margin-top: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-#featured-talks .row {
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    padding-bottom: 30px;
+
+.publication-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
-.card {
-    grid-column: span 3;
-    vertical-align: top;
-    background-color: #eee;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 5px;
-    background-color: white;
-    padding-bottom: 10px;
+
+.publication-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
 }
-@media (max-width: 991px) {
-    .card {
-        grid-column: span 6;
-    }
-    #featured-talks .row {
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-    }
+
+.publication-card h3 a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
-.card img {
-    border-radius: 5px;
-    width: 100%;
+
+.publication-card h3 a:hover {
+    color: #555;
 }
-.cdesc {
-    height: 30px;
-    vertical-align: top;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-@media (max-width: 768px) {
-    .cdesc {
-        font-size: 14px;
-        padding-bottom: 10px;
-    }
-}
-#pet-projects .row {
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-}
-.project {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-.pico {
-    float: left;
-    margin-right: 10px;
-}
-.pdesc {
-}
-.pend {
-    clear: both;
-}
-.pico img {
-    height: 80px;
-    border-radius: 5px;
-    border: 1px solid #999;
-}
-.pub {
-    font-size: 14px;
-    border-left: 4px solid #aaa;
-    padding: 2px 0px 2px 10px;
-    margin-bottom: 10px;
-}
-.pub-title {
-    display: inline;
-    color: #333;
-}
+
 .pub-venue {
-    display: inline;
-    color: #090;
-}
-.pub-authors {
-    display: block;
-    color: #900;
-}
-.tul {
-    text-align: center;
-    padding: 0;
-}
-.til {
     display: inline-block;
-    padding: 3px 15px 3px 15px;
-    margin-bottom: 5px;
+    font-size: 14px;
+    color: #090;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
-.tilb {
-    border-right: 1px solid #ccc;
+
+.pub-authors {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
 }
-.nodot {
-    list-style-type: none;
-    padding-left: 0;
+
+/* Certifications Section */
+.certifications-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.cert-item {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cert-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.cert-info {
+    width: 100%;
+    min-height: 100px;
+}
+
+.cert-info h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.cert-date {
+    font-size: 13px;
+    color: #090;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.cert-id {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.cert-year {
+    font-size: 13px;
+    color: #090;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.cert-badge {
+    margin-top: 15px;
+}
+
+.cert-badge a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.cert-badge a:hover {
+    transform: scale(1.05);
+}
+
+.cert-badge img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-note {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 20px;
+    margin: 40px 0 20px 0;
 }
